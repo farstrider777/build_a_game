@@ -1,6 +1,8 @@
 class Scoreboard{
-  // constructor(){
-  // }
+  constructor(level, bugsToSquash){
+    this.level = level;
+    this.bugsToSquash = bugsToSquash;
+  }
 }
 
 
