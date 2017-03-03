@@ -92,6 +92,11 @@ describe('Test our game', function () {
       assert.equal(5, fun.bugsToSquash);
     });
 
+    it('a Scoreboard should have a writeInstructions method that returns a string with the bosses instructions', function() {
+      var fun = new Scoreboard(1, 3);
+      assert.equal(`The boss says: You've got 30 seconds to fix ${3} bugs that are in this project`, fun.writeInstructions());
+    });
+
   });
 
 
