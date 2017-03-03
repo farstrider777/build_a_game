@@ -9,8 +9,11 @@ const expect = chai.expect;
 const should = chai.should();
 const assert = chai.assert;
 
-import { Player } from '../src/js/main';
+
 import { Board } from '../src/js/models/board'
+import { Bug } from '../src/js/models/bug'
+import { Scoreboard } from '../src/js/models/scoreboard'
+import { Hammer } from '../src/js/models/hammer'
 
 describe('Test our game', function () {
 
@@ -26,11 +29,40 @@ describe('Test our game', function () {
   //   assert.equal(5, bill.attackValue);
   // });
 
-  describe('Testing the Creation of Something', function () {
+  describe('Testing the Creation of a Board', function () {
 
-    it('should exist after we create it', function () {
+    it('a Board should exist after we create it', function () {
       let x = new Board;
       expect(x).to.be.an.instanceof(Board);
+    });
+
+  });
+
+  describe('Testing the Creation of a Bug', function () {
+
+    it('a Bug should exist after we create it', function () {
+      let x = new Bug;
+      expect(x).to.be.an.instanceof(Bug);
+    });
+
+  });
+
+
+  describe('Testing the Creation of a Scoreboard', function () {
+
+    it('a Scoreboard should exist after we create it', function () {
+      let x = new Scoreboard;
+      expect(x).to.be.an.instanceof(Scoreboard);
+    });
+
+  });
+
+
+  describe('Testing the Creation of a Hammer', function () {
+
+    it('a Hammer should exist after we create it', function () {
+      let x = new Hammer;
+      expect(x).to.be.an.instanceof(Hammer);
     });
 
   });
