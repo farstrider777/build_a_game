@@ -1,21 +1,13 @@
-console.log("hi")
-console.log("hi2")
-///
-
 function Player(object){
-  object = object || {}
+  object = object || {};
   this.hitPoints = object.hitPoints;
   this.attackValue = object.attackValue;
 }
 
+class Board{
+  // constructor(){
+  // }
+}
 
-var fred = new Player({
-  hitPoints: 7,
-  attackValue: 5
-})
 
-console.log("fred")
-console.log(fred.hitPoints)
-console.log(fred.attackValue);
-
-export { Player }
+export { Player, Board };

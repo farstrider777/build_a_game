@@ -9,11 +9,12 @@ const expect = chai.expect;
 const should = chai.should();
 const assert = chai.assert;
 
-import { Player } from "../src/js/main";
+import { Player } from '../src/js/main';
+import { Board } from '../src/js/models/board'
 
 describe('Test our game', function () {
 
-  it("test player", function () {
+  it('test player', function () {
     //let item = new Player();
 
     var bill = new Player({
@@ -25,6 +26,14 @@ describe('Test our game', function () {
     assert.equal(5, bill.attackValue);
   });
 
+  describe('Testing the Creation of Something', function () {
+
+    it('should exist after we create it', function () {
+      let x = new Board;
+      expect(x).to.be.an.instanceof(Board);
+    });
+
+  });
 
   // describe('Testing the Creation of Something', function () {
   //
