@@ -14,17 +14,17 @@ import { Board } from '../src/js/models/board'
 
 describe('Test our game', function () {
 
-  it('test player', function () {
-    //let item = new Player();
-
-    var bill = new Player({
-      hitPoints: 7,
-      attackValue: 5
-    });
-    //item.tick();
-    assert.equal(7, bill.hitPoints);
-    assert.equal(5, bill.attackValue);
-  });
+  // it('test player', function () {
+  //   //let item = new Player();
+  //
+  //   var bill = new Player({
+  //     hitPoints: 7,
+  //     attackValue: 5
+  //   });
+  //   //item.tick();
+  //   assert.equal(7, bill.hitPoints);
+  //   assert.equal(5, bill.attackValue);
+  // });
 
   describe('Testing the Creation of Something', function () {
 

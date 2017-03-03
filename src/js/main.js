@@ -1,3 +1,5 @@
+
+/*
 function Player(object){
   object = object || {};
   this.hitPoints = object.hitPoints;
@@ -11,3 +13,4 @@ class Board{
 
 
 export { Player, Board };
+*/
