@@ -118,11 +118,10 @@ describe('Test our game', function () {
       expect(x).to.be.an.instanceof(Hammer);
     });
 
-    it('a Hammer should have a squash method that adds a dead property to a bug that it squashes, based on the bugs id', function() {
+    it('a Hammer should have a squash method that adds a dead property to a bug that it squashes', function() {
       var bam = new Hammer;
       var bill = new Bug;
-      bill.id = 3;
-      Hammer.squash(3);
+      bam.squash(bill);
       assert.equal(bill.dead, true);
     });
 
