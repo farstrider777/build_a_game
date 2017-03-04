@@ -117,6 +117,15 @@ describe('Test our game', function () {
       let x = new Hammer;
       expect(x).to.be.an.instanceof(Hammer);
     });
+
+    it('a Hammer should have a squash method that adds a dead property to a bug that it squashes, based on the bugs id', function() {
+      var bam = new Hammer;
+      var bill = new Bug;
+      bill.id = 3;
+      Hammer.squash(3);
+      assert.equal(bill.dead, true);
+    });
+
   });
 });
   // describe('Testing the Creation of Something', function () {
