@@ -97,6 +97,18 @@ describe('Test our game', function () {
       assert.equal(`The boss says: You've got 30 seconds to fix ${3} bugs that are in this project`, fun.writeInstructions());
     });
 
+    it('a Scoreboards writeInstructions method should write the number of seconds left based on the level', function() {
+      var fun = new Scoreboard(1, 3);
+      assert.equal(`The boss says: You've got 30 seconds to fix ${3} bugs that are in this project`, fun.writeInstructions());
+      var fun = new Scoreboard(2, 4);
+      assert.equal(`The boss says: You've got 15 seconds to fix ${4} bugs that are in this project`, fun.writeInstructions());
+      var fun = new Scoreboard(3, 5);
+      assert.equal(`The boss says: You've got 10 seconds to fix ${5} bugs that are in this project`, fun.writeInstructions());
+      var fun = new Scoreboard(4, 6);
+      assert.equal(`The boss says: You've got 7.5 seconds to fix ${6} bugs that are in this project`, fun.writeInstructions());
+    });
+
+
   });
 
 

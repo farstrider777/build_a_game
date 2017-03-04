@@ -28,7 +28,7 @@ class Board{
     }else if (errorNumber < .6){
       bugError = '404 not found';
     }else if (errorNumber < .7){
-      bugError = 'Unexpected token';
+      bugError = 'Syntax Error: Unexpected token';
     }else if (errorNumber < .8){
       bugError = 'error1';
     }else if (errorNumber < .9){
