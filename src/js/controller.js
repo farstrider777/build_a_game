@@ -15,24 +15,53 @@ for (var i = 0; i < startBugs; i++) {
 }
 var Mjölnir = new Hammer;
 
+var currentHoleArray = [];
+
+var chosenHoles = [];
+
+// function chooseHole(){
+//   for(var count = 0; count < currentBugs.length; count++){
+//     if(!currentBugs[count].dead){
+//       var holeChoice = 1 + Math.floor((Math.random() * 10));
+//       if(!chosenHoles.includes(holeChoice)){
+//         $(`#hole-${holeChoice}`).html(currentBugs[count].name);
+//         $(`#hole-${holeChoice}`).toggleClass('height0');
+//         $(`#hole-${holeChoice}`).toggleClass('height60');
+//         chosenHoles.push(holeChoice);
+//       }else{ chooseHole(); }
+//     }
+//   }
+// }
+
+
 function popBug () {
 
-  var chosenHoles = [];
+  chosenHoles = [];
 
   for(var count = 0; count < currentBugs.length; count++){
-    var holeChoice = 1 + Math.floor((Math.random() * 10));
-    $(`#hole-${holeChoice}`).html(currentBugs[count].name);
-    $(`#hole-${holeChoice}`).toggleClass('height0');
-    $(`#hole-${holeChoice}`).toggleClass('height60');
-    chosenHoles.push(holeChoice);
+    if(!currentBugs[count].dead){
+      var holeChoice = 1 + Math.floor((Math.random() * 10));
+      while(chosenHoles.includes(holeChoice)){
+        holeChoice = 1 + Math.floor((Math.random() * 10));
+      }
+
+      $(`#hole-${holeChoice}`).html(currentBugs[count].name);
+      $(`#hole-${holeChoice}`).toggleClass('height0');
+      $(`#hole-${holeChoice}`).toggleClass('height60');
+      chosenHoles.push(holeChoice);
+
+    }
   }
 
+  //chooseHole();
+
   setTimeout(function(){
-    console.log(chosenHoles.length)
+    currentHoleArray = chosenHoles
+    //console.log(chosenHoles)
     for(var i = 0; i < chosenHoles.length; i++){
       $(`#hole-${chosenHoles[i]}`).toggleClass('height0');
       $(`#hole-${chosenHoles[i]}`).toggleClass('height60');
-      console.log(i);
+      //console.log(i);
     }
   }, 1000);
 
@@ -81,6 +110,15 @@ function killBug(event){
   //console.log(event.target);
   $(event.target).toggleClass('height0');
   $(event.target).toggleClass('height60');
+  //Mjölnir.squash(currentBugs[0]);
+  //console.log(event.target.attributes)
+  var res = event.target.attributes['0'].textContent;
+  var holeSelected = res.split('-')[1]
+  console.log(holeSelected);
+  console.log(currentHoleArray);
+  var a = currentHoleArray.lastIndexOf(holeSelected);
+  console.log(a)
+  //Mjölnir.squash(currentBugs[0])
 }
 
 $('.container').click(killBug);
