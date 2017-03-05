@@ -13,10 +13,10 @@ function writeTest(object){
     <div id='hole-4'></div>
     <div id='hole-5'></div>
     <div id='hole-6'></div>
-    <div id='hole7'></div>
-    <div id='hole8'></div>
-    <div id='hole9'></div>
-    <div id='hole10'></div>
+    <div id='hole-7'></div>
+    <div id='hole-8'></div>
+    <div id='hole-9'></div>
+    <div id='hole-10'></div>
     `);
 }
 
