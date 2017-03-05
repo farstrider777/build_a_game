@@ -1,6 +1,6 @@
 import { Board } from './models/board.js';
 import { Scoreboard } from './models/scoreboard.js';
-import { writeTest, youWin} from './view/template.js';
+import { writeTest, youWin, youLose} from './view/template.js';
 //import { Hammer } from './models/hammer.js';
 import $ from 'jquery';
 
@@ -67,13 +67,14 @@ function popBug () {
   }, 1000);
 
   if(numberOfCycles > 3 * (9 - prime.level)){
-    console.log("youlose")
+    youLose();
   }
 
   if(currentBugs.length === 0){
-    console.log("next level")
+    //console.log("next level")
     startLevel++;
     startBugs++;
+    numberOfCycles = 0;
     if(startBugs <= 10){
       prime.level = startLevel;
       prime.bugsToSquash = startBugs;
@@ -82,6 +83,10 @@ function popBug () {
         currentBugs.push(main.generateBug(1));
       }
     }else{ youWin(); }
+  }
+
+  if(numberOfCycles > 9 - prime.level){
+    youLose();
   }
 
     // holeChoice = 1 + Math.floor((Math.random() * 10));
@@ -94,7 +99,7 @@ function popBug () {
     //   $(`#hole-${holeChoice}`).toggleClass('height60');
     // }, 1000);
 
-
+console.log(numberOfCycles)
   // Mjölnir.squash(currentBugs[0]);
   // console.log(currentBugs[0])
 }
@@ -141,7 +146,7 @@ function killBug(event){
       //Mjölnir.squash(currentBugs[count])
       //console.log("inside if")
       currentBugs.splice(count, 1);
-      console.log(currentBugs)
+      //console.log(currentBugs)
     }
   };
 
