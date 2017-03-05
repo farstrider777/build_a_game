@@ -16,21 +16,42 @@ for (var i = 0; i < startBugs; i++) {
 var Mjölnir = new Hammer;
 
 function popBug () {
-  var holeChoice = 1 + Math.floor((Math.random() * 10));
-  $(`#hole-${holeChoice}`).html(currentBugs[0].name);
-  $(`#hole-${holeChoice}`).toggleClass('height0');
-  $(`#hole-${holeChoice}`).toggleClass('height60');
 
-  setTimeout(function(){
+  var chosenHoles = [];
+
+  for(var count = 0; count < currentBugs.length; count++){
+    var holeChoice = 1 + Math.floor((Math.random() * 10));
+    $(`#hole-${holeChoice}`).html(currentBugs[count].name);
     $(`#hole-${holeChoice}`).toggleClass('height0');
     $(`#hole-${holeChoice}`).toggleClass('height60');
+    chosenHoles.push(holeChoice);
+  }
+
+  setTimeout(function(){
+    console.log(chosenHoles.length)
+    for(var i = 0; i < chosenHoles.length; i++){
+      $(`#hole-${chosenHoles[i]}`).toggleClass('height0');
+      $(`#hole-${chosenHoles[i]}`).toggleClass('height60');
+      console.log(i);
+    }
   }, 1000);
 
-  Mjölnir.squash(currentBugs[0]);
-  console.log(currentBugs[0])
+    // holeChoice = 1 + Math.floor((Math.random() * 10));
+    // $(`#hole-${holeChoice}`).html(currentBugs[0].name);
+    // $(`#hole-${holeChoice}`).toggleClass('height0');
+    // $(`#hole-${holeChoice}`).toggleClass('height60');
+    //
+    // setTimeout(function(){
+    //   $(`#hole-${holeChoice}`).toggleClass('height0');
+    //   $(`#hole-${holeChoice}`).toggleClass('height60');
+    // }, 1000);
+
+
+  // Mjölnir.squash(currentBugs[0]);
+  // console.log(currentBugs[0])
 }
 
-setInterval(popBug, 3000);
+setInterval(popBug, 4000);
 //
 // holeChoice = 1 + Math.floor((Math.random() * 10));
 // $(`#hole-${holeChoice}`).html(currentBugs[1].name);
@@ -57,7 +78,7 @@ setInterval(popBug, 3000);
 
 
 function killBug(event){
-  console.log(event.target);
+  //console.log(event.target);
   $(event.target).toggleClass('height0');
   $(event.target).toggleClass('height60');
 }
