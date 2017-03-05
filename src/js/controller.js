@@ -1,6 +1,7 @@
 import { Board } from './models/board.js';
 import { Scoreboard } from './models/scoreboard.js';
 import { writeTest } from './view/template.js';
+import { Hammer } from './models/hammer.js';
 import $ from 'jquery';
 
 var main = new Board;
@@ -12,6 +13,7 @@ var currentBugs = [];
 for (var i = 0; i < startBugs; i++) {
   currentBugs.push(main.generateBug(1));
 }
+var Mjölnir = new Hammer;
 
 function popBug () {
   var holeChoice = 1 + Math.floor((Math.random() * 10));
@@ -23,6 +25,9 @@ function popBug () {
     $(`#hole-${holeChoice}`).toggleClass('height0');
     $(`#hole-${holeChoice}`).toggleClass('height60');
   }, 1000);
+
+  Mjölnir.squash(currentBugs[0]);
+  console.log(currentBugs[0])
 }
 
 setInterval(popBug, 3000);
@@ -46,6 +51,10 @@ setInterval(popBug, 3000);
 // $(`#hole-${holeChoice}`).html(currentBugs[4].name);
 // $(`#hole-${holeChoice}`).toggleClass('height0');
 // $(`#hole-${holeChoice}`).toggleClass('height60');
+
+
+
+
 
 function killBug(event){
   console.log(event.target);
