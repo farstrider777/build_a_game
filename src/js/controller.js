@@ -13,30 +13,44 @@ for (var i = 0; i < startBugs; i++) {
   currentBugs.push(main.generateBug(1));
 }
 
-var holeChoice = 1 + Math.floor((Math.random() * 10));
-$(`#hole-${holeChoice}`).html(currentBugs[0].name);
-$(`#hole-${holeChoice}`).removeClass('height0');
-$(`#hole-${holeChoice}`).addClass('height60');
 
-holeChoice = 1 + Math.floor((Math.random() * 10));
-$(`#hole-${holeChoice}`).html(currentBugs[1].name);
-$(`#hole-${holeChoice}`).removeClass('height0');
-$(`#hole-${holeChoice}`).addClass('height60');
 
-holeChoice = 1 + Math.floor((Math.random() * 10));
-$(`#hole-${holeChoice}`).html(currentBugs[2].name);
-$(`#hole-${holeChoice}`).removeClass('height0');
-$(`#hole-${holeChoice}`).addClass('height60');
 
-holeChoice = 1 + Math.floor((Math.random() * 10));
-$(`#hole-${holeChoice}`).html(currentBugs[3].name);
-$(`#hole-${holeChoice}`).toggleClass('height0');
-$(`#hole-${holeChoice}`).toggleClass('height60');
 
-holeChoice = 1 + Math.floor((Math.random() * 10));
-$(`#hole-${holeChoice}`).html(currentBugs[4].name);
-$(`#hole-${holeChoice}`).toggleClass('height0');
-$(`#hole-${holeChoice}`).toggleClass('height60');
+
+function popBug () {
+  var holeChoice = 1 + Math.floor((Math.random() * 10));
+  $(`#hole-${holeChoice}`).html(currentBugs[0].name);
+  $(`#hole-${holeChoice}`).toggleClass('height0');
+  $(`#hole-${holeChoice}`).toggleClass('height60');
+
+  setTimeout(function(){
+    $(`#hole-${holeChoice}`).toggleClass('height0');
+    $(`#hole-${holeChoice}`).toggleClass('height60');
+  }, 1000);
+}
+
+setInterval(popBug, 3000);
+//
+// holeChoice = 1 + Math.floor((Math.random() * 10));
+// $(`#hole-${holeChoice}`).html(currentBugs[1].name);
+// $(`#hole-${holeChoice}`).removeClass('height0');
+// $(`#hole-${holeChoice}`).addClass('height60');
+//
+// holeChoice = 1 + Math.floor((Math.random() * 10));
+// $(`#hole-${holeChoice}`).html(currentBugs[2].name);
+// $(`#hole-${holeChoice}`).removeClass('height0');
+// $(`#hole-${holeChoice}`).addClass('height60');
+//
+// holeChoice = 1 + Math.floor((Math.random() * 10));
+// $(`#hole-${holeChoice}`).html(currentBugs[3].name);
+// $(`#hole-${holeChoice}`).toggleClass('height0');
+// $(`#hole-${holeChoice}`).toggleClass('height60');
+//
+// holeChoice = 1 + Math.floor((Math.random() * 10));
+// $(`#hole-${holeChoice}`).html(currentBugs[4].name);
+// $(`#hole-${holeChoice}`).toggleClass('height0');
+// $(`#hole-${holeChoice}`).toggleClass('height60');
 
 function killBug(event){
   console.log(event.target);
