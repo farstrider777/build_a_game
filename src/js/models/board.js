@@ -30,11 +30,11 @@ class Board{
     }else if (errorNumber < .7){
       bugError = 'Syntax Error: Unexpected token';
     }else if (errorNumber < .8){
-      bugError = 'error1';
+      bugError = 'zsh: command not found:';
     }else if (errorNumber < .9){
-      bugError = 'error2';
+      bugError = 'infinite loop!!!';
     }else if (errorNumber < 1){
-      bugError = 'error3';
+      bugError = 'error: pathspec did not match any file(s) known to git.';
     }
 
     var fred = new Bug({

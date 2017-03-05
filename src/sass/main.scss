@@ -5,3 +5,17 @@
 .board {
   width: 800px;
 }
+
+.container {
+  position: relative;
+}
+
+#hole-1 {
+  position: absolute;
+  top: 80px;
+  left: 160px;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  font-size: 10px;
+}

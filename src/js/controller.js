@@ -1,7 +1,7 @@
 import { Board } from './models/board.js';
 import { Scoreboard } from './models/scoreboard.js';
 import { writeTest } from './view/template.js';
-
+import $ from 'jquery';
 
 var main = new Board;
 var startLevel = 1;
@@ -12,7 +12,7 @@ var currentBugs = [];
 for (var i = 0; i < startBugs; i++) {
   currentBugs.push(main.generateBug(1));
 }
-
+$('#hole-1').html(currentBugs[0].name);
 
 
 export { prime, currentBugs };
