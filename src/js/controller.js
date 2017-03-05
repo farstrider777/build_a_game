@@ -1,7 +1,7 @@
 import { Board } from './models/board.js';
 import { Scoreboard } from './models/scoreboard.js';
-import { writeTest } from './view/template.js';
-import { Hammer } from './models/hammer.js';
+import { writeTest, youWin} from './view/template.js';
+//import { Hammer } from './models/hammer.js';
 import $ from 'jquery';
 
 var main = new Board;
@@ -13,9 +13,9 @@ var currentBugs = [];
 for (var i = 0; i < startBugs; i++) {
   currentBugs.push(main.generateBug(1));
 }
-var Mjölnir = new Hammer;
+//var Mjölnir = new Hammer;
 
-
+var numberOfCycles = -1;
 
 var chosenHoles = [];
 
@@ -36,6 +36,7 @@ var chosenHoles = [];
 
 function popBug () {
 
+  numberOfCycles++;
   chosenHoles = [];
 
   for(var count = 0; count < currentBugs.length; count++){
@@ -65,6 +66,24 @@ function popBug () {
     }
   }, 1000);
 
+  if(numberOfCycles > 3 * (9 - prime.level)){
+    console.log("youlose")
+  }
+
+  if(currentBugs.length === 0){
+    console.log("next level")
+    startLevel++;
+    startBugs++;
+    if(startBugs <= 10){
+      prime.level = startLevel;
+      prime.bugsToSquash = startBugs;
+      writeTest(prime);
+      for (var i = 0; i < startBugs; i++) {
+        currentBugs.push(main.generateBug(1));
+      }
+    }else{ youWin(); }
+  }
+
     // holeChoice = 1 + Math.floor((Math.random() * 10));
     // $(`#hole-${holeChoice}`).html(currentBugs[0].name);
     // $(`#hole-${holeChoice}`).toggleClass('height0');
@@ -80,7 +99,7 @@ function popBug () {
   // console.log(currentBugs[0])
 }
 
-setInterval(popBug, 4000);
+setInterval(popBug, 3000);
 //
 // holeChoice = 1 + Math.floor((Math.random() * 10));
 // $(`#hole-${holeChoice}`).html(currentBugs[1].name);
@@ -120,7 +139,7 @@ function killBug(event){
     //console.log(chosenHoles[count])
     if(holeNumber == chosenHoles[count]){
       //Mjölnir.squash(currentBugs[count])
-      console.log("inside if")
+      //console.log("inside if")
       currentBugs.splice(count, 1);
       console.log(currentBugs)
     }

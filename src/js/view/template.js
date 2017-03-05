@@ -21,4 +21,12 @@ function writeTest(object){
     `);
 }
 
-export { writeTest };
+function youWin(){
+  $('.container').html(`
+    <div class='title'>You Beat Whack-a-Bug!!!</div>
+    <img id ='boss' src='./images/boss1.png'/>
+    <div class='instructions'><br><br><br>I'm very proud of you!!! How about a raise!!!</div>
+    `);
+}
+
+export { writeTest, youWin };
