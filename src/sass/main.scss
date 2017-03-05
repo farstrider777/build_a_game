@@ -10,102 +10,136 @@
   position: relative;
 }
 
+.height60 {
+  transition-delay: 0s;
+  transition-property: height;
+  transition-duration: 1s;
+  height: 60px;
+}
+
+.height0 {
+  transition-delay: 0s;
+  transition-property: height;
+  transition-duration: 1s;
+  height: 0px;
+}
+
 #hole-1 {
   position: absolute;
-  top: 80px;
+  bottom: 330px;
   left: 157px;
   width: 60px;
-  height: 60px;
   background-color: white;
   font-size: 10px;
+  overflow: hidden;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
 }
 
 #hole-2 {
   position: absolute;
-  top: 80px;
+  bottom: 330px;
   left: 360px;
   width: 60px;
-  height: 60px;
   background-color: white;
   font-size: 10px;
+  overflow: hidden;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
 }
 
 #hole-3 {
   position: absolute;
-  top: 80px;
+  bottom: 330px;
   left: 570px;
   width: 60px;
-  height: 60px;
   background-color: white;
   font-size: 10px;
+  overflow: hidden;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
 }
 
 #hole-4 {
   position: absolute;
-  top: 163px;
+  bottom: 252px;
   left: 110px;
   width: 60px;
-  height: 60px;
   background-color: white;
   font-size: 10px;
+  overflow: hidden;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
 }
 
 #hole-5 {
   position: absolute;
-  top: 163px;
+  bottom: 252px;
   left: 278px;
   width: 60px;
-  height: 60px;
   background-color: white;
   font-size: 10px;
+  overflow: hidden;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
 }
 
 #hole-6 {
   position: absolute;
-  top: 163px;
+  bottom: 252px;
   left: 449px;
   width: 60px;
-  height: 60px;
   background-color: white;
   font-size: 10px;
+  overflow: hidden;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
 }
 
 #hole-7 {
   position: absolute;
-  top: 163px;
+  bottom: 252px;
   left: 616px;
   width: 60px;
-  height: 60px;
   background-color: white;
   font-size: 10px;
+  overflow: hidden;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
 }
 
 #hole-8 {
   position: absolute;
-  top: 275px;
+  bottom: 140px;
   left: 150px;
   width: 60px;
-  height: 60px;
   background-color: white;
   font-size: 10px;
+  overflow: hidden;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
 }
 
 #hole-9 {
   position: absolute;
-  top: 275px;
+  bottom: 140px;
   left: 363px;
   width: 60px;
-  height: 60px;
   background-color: white;
   font-size: 10px;
+  overflow: hidden;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
 }
 
 #hole-10 {
   position: absolute;
-  top: 275px;
+  bottom: 140px;
   left: 580px;
   width: 60px;
-  height: 60px;
   background-color: white;
   font-size: 10px;
+  overflow: hidden;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
 }
