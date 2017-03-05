@@ -5,7 +5,7 @@ function writeTest(object){
   //var prime = new Scoreboard(1, 5);
   $('.container').html(`
     <div class='title'>Welcome to Whack-a-Bug!!!</div>
-    <div><img class='board' src='./images/mole_background.jpeg'/></div>
+    <div><img id='board' src='./images/mole_background.jpeg'/></div>
     <div class='instructions'>${object.writeInstructions()}</div>
     <div id='hole-1' class='height0'></div>
     <div id='hole-2' class='height0'></div>

@@ -13,11 +13,6 @@ for (var i = 0; i < startBugs; i++) {
   currentBugs.push(main.generateBug(1));
 }
 
-
-
-
-
-
 function popBug () {
   var holeChoice = 1 + Math.floor((Math.random() * 10));
   $(`#hole-${holeChoice}`).html(currentBugs[0].name);
@@ -58,7 +53,7 @@ function killBug(event){
   $(event.target).toggleClass('height60');
 }
 
-$('#hole-1').click(killBug);
+$('.container').click(killBug);
 
 
 export { prime, currentBugs };
