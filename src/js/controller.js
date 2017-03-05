@@ -82,10 +82,14 @@ function popBug () {
       for (var i = 0; i < startBugs; i++) {
         currentBugs.push(main.generateBug(1));
       }
-    }else{ youWin(); }
+    }else{
+      clearInterval(endValue);
+      youWin();
+    }
   }
 
   if(numberOfCycles > 9 - prime.level){
+    clearInterval(endValue);
     youLose();
   }
 
@@ -99,12 +103,12 @@ function popBug () {
     //   $(`#hole-${holeChoice}`).toggleClass('height60');
     // }, 1000);
 
-console.log(numberOfCycles)
+  console.log(numberOfCycles);
   // Mjölnir.squash(currentBugs[0]);
   // console.log(currentBugs[0])
 }
 
-setInterval(popBug, 3000);
+var endValue = setInterval(popBug, 3000);
 //
 // holeChoice = 1 + Math.floor((Math.random() * 10));
 // $(`#hole-${holeChoice}`).html(currentBugs[1].name);
@@ -138,7 +142,8 @@ function killBug(event){
   //console.log(event.target.attributes)
   var res = event.target.attributes['0'].textContent;
   //console.log(res.split('-')[1]);
-  var holeNumber = res.split('-')[1]
+  var holeNumber = res.split('-')[1];
+  $('#hammer').addClass(`hammer-${res}`);
   for(var count = 0; count < chosenHoles.length; count++){
     //console.log(holeNumber)
     //console.log(chosenHoles[count])
@@ -148,7 +153,7 @@ function killBug(event){
       currentBugs.splice(count, 1);
       //console.log(currentBugs)
     }
-  };
+  }
 
 
   // console.log(holeSelected);
