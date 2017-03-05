@@ -15,7 +15,7 @@ for (var i = 0; i < startBugs; i++) {
 }
 var Mjölnir = new Hammer;
 
-var currentHoleArray = [];
+
 
 var chosenHoles = [];
 
@@ -56,7 +56,7 @@ function popBug () {
   //chooseHole();
 
   setTimeout(function(){
-    currentHoleArray = chosenHoles
+
     //console.log(chosenHoles)
     for(var i = 0; i < chosenHoles.length; i++){
       $(`#hole-${chosenHoles[i]}`).toggleClass('height0');
@@ -108,16 +108,33 @@ setInterval(popBug, 4000);
 
 function killBug(event){
   //console.log(event.target);
-  $(event.target).toggleClass('height0');
-  $(event.target).toggleClass('height60');
+  //$(event.target).toggleClass('height0');
+  //$(event.target).toggleClass('height60');
   //Mjölnir.squash(currentBugs[0]);
   //console.log(event.target.attributes)
   var res = event.target.attributes['0'].textContent;
-  var holeSelected = res.split('-')[1]
-  console.log(holeSelected);
-  console.log(currentHoleArray);
-  var a = currentHoleArray.lastIndexOf(holeSelected);
-  console.log(a)
+  //console.log(res.split('-')[1]);
+  var holeNumber = res.split('-')[1]
+  for(var count = 0; count < chosenHoles.length; count++){
+    //console.log(holeNumber)
+    //console.log(chosenHoles[count])
+    if(holeNumber == chosenHoles[count]){
+      //Mjölnir.squash(currentBugs[count])
+      console.log("inside if")
+      currentBugs.splice(count, 1);
+      console.log(currentBugs)
+    }
+  };
+
+
+  // console.log(holeSelected);
+  // console.log(chosenHoles);
+  // var a = chosenHoles.lastIndexOf(holeSelected);
+  // console.log(holeSelected);
+  // console.log(chosenHoles.lastIndexOf(5))
+  // console.log(a)
+
+
   //Mjölnir.squash(currentBugs[0])
 }
 
