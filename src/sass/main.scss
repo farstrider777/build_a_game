@@ -7,6 +7,16 @@
   height: 400px;
 }
 
+#boss {
+  display: inline-block;
+  width: 180px;
+}
+
+.instructions {
+  display: inline-block;
+  vertical-align: top;
+}
+
 .container {
   position: relative;
 }
@@ -27,7 +37,7 @@
 
 #hole-1 {
   position: absolute;
-  bottom: 330px;
+  bottom: 312px;
   left: 157px;
   width: 60px;
   background-color: white;
@@ -39,7 +49,7 @@
 
 #hole-2 {
   position: absolute;
-  bottom: 330px;
+  bottom: 312px;
   left: 360px;
   width: 60px;
   background-color: white;
@@ -51,7 +61,7 @@
 
 #hole-3 {
   position: absolute;
-  bottom: 330px;
+  bottom: 312px;
   left: 570px;
   width: 60px;
   background-color: white;
@@ -63,7 +73,7 @@
 
 #hole-4 {
   position: absolute;
-  bottom: 252px;
+  bottom: 236px;
   left: 110px;
   width: 60px;
   background-color: white;
@@ -75,7 +85,7 @@
 
 #hole-5 {
   position: absolute;
-  bottom: 252px;
+  bottom: 236px;
   left: 278px;
   width: 60px;
   background-color: white;
@@ -87,7 +97,7 @@
 
 #hole-6 {
   position: absolute;
-  bottom: 252px;
+  bottom: 236px;
   left: 449px;
   width: 60px;
   background-color: white;
@@ -99,7 +109,7 @@
 
 #hole-7 {
   position: absolute;
-  bottom: 252px;
+  bottom: 236px;
   left: 616px;
   width: 60px;
   background-color: white;
@@ -111,7 +121,7 @@
 
 #hole-8 {
   position: absolute;
-  bottom: 140px;
+  bottom: 123px;
   left: 150px;
   width: 60px;
   background-color: white;
@@ -123,7 +133,7 @@
 
 #hole-9 {
   position: absolute;
-  bottom: 140px;
+  bottom: 123px;
   left: 363px;
   width: 60px;
   background-color: white;
@@ -135,7 +145,7 @@
 
 #hole-10 {
   position: absolute;
-  bottom: 140px;
+  bottom: 123px;
   left: 580px;
   width: 60px;
   background-color: white;
