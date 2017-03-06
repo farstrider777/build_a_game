@@ -1,8 +1,8 @@
 import $ from 'jquery';
 import { Scoreboard } from '../models/scoreboard';
+//import { prime } from '../controller';
 
 function writeTest(object){
-  //var prime = new Scoreboard(1, 5);
   $('.container').html(`
     <div class='title'>Welcome to Whack-a-Bug!!!</div>
     <img id ='boss' src='./images/boss1.png'/>
