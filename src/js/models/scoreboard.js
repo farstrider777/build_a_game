@@ -9,5 +9,4 @@ class Scoreboard{
   }
 }
 
-
 export { Scoreboard };

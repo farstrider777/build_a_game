@@ -30,6 +30,7 @@ function popBug () {
     $(`#hole-${holeChoice}`).html(currentBugs[count].name);
     $(`#hole-${holeChoice}`).toggleClass('height0');
     $(`#hole-${holeChoice}`).toggleClass('height60');
+    //$(`#hole-${holeChoice}`).addClass(`${currentBugs[count].color}`);
     chosenHoles.push(holeChoice);
   }
 
