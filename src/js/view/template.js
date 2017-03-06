@@ -18,7 +18,7 @@ function writeTest(object){
     <div id='hole-8' class='height0'></div>
     <div id='hole-9' class='height0'></div>
     <div id='hole-10' class='height0'></div>
-    <img id="hammer" src='./images/hammer.png'/>
+    <img class="hammer" src='./images/hammer.png'/>
     `);
 }
 

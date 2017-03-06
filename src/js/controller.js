@@ -66,9 +66,9 @@ function popBug () {
     }
   }, 1000);
 
-  if(numberOfCycles > 3 * (9 - prime.level)){
-    youLose();
-  }
+  // if(numberOfCycles > 3 * (9 - prime.level)){
+  //   youLose();
+  // }
 
   if(currentBugs.length === 0){
     //console.log("next level")
@@ -103,7 +103,7 @@ function popBug () {
     //   $(`#hole-${holeChoice}`).toggleClass('height60');
     // }, 1000);
 
-  console.log(numberOfCycles);
+  //console.log(numberOfCycles);
   // Mjölnir.squash(currentBugs[0]);
   // console.log(currentBugs[0])
 }
@@ -141,9 +141,112 @@ function killBug(event){
   //Mjölnir.squash(currentBugs[0]);
   //console.log(event.target.attributes)
   var res = event.target.attributes['0'].textContent;
-  //console.log(res.split('-')[1]);
+  //console.log(res.split('-')[1]);  /
   var holeNumber = res.split('-')[1];
-  $('#hammer').addClass(`hammer-${res}`);
+  if(holeNumber == 10){
+    $('.hammer').animate({
+      left: '550px',
+      bottom: '50px'
+    });
+    $('.hammer').animate({
+      bottom: '-25px',
+      left: '400px',
+    });
+  }
+  if(holeNumber == 9){
+    $('.hammer').animate({
+      left: '350px',
+      bottom: '50px',
+    });
+    $('.hammer').animate({
+      bottom: '-25px',
+      left: '400px',
+    });
+  }
+  if(holeNumber == 8){
+    $('.hammer').animate({
+      left: '150px',
+      bottom: '50px'
+    });
+    $('.hammer').animate({
+      bottom: '-25px',
+      left: '400px',
+    });
+  }
+
+  if(holeNumber == 7){
+    $('.hammer').animate({
+      left: '550px',
+      bottom: '165px'
+    });
+    $('.hammer').animate({
+      bottom: '-25px',
+      left: '400px',
+    });
+  }
+  if(holeNumber == 6){
+    $('.hammer').animate({
+      left: '400px',
+      bottom: '165px',
+    });
+    $('.hammer').animate({
+      bottom: '-25px',
+      left: '400px',
+    });
+  }
+  if(holeNumber == 5){
+    $('.hammer').animate({
+      left: '250px',
+      bottom: '165px'
+    });
+    $('.hammer').animate({
+      bottom: '-25px',
+      left: '400px',
+    });
+  }
+  if(holeNumber == 4){
+    $('.hammer').animate({
+      left: '100px',
+      bottom: '165px'
+    });
+    $('.hammer').animate({
+      bottom: '-25px',
+      left: '400px',
+    });
+  }
+
+  if(holeNumber == 3){
+    $('.hammer').animate({
+      left: '550px',
+      bottom: '270px'
+    });
+    $('.hammer').animate({
+      bottom: '-25px',
+      left: '400px',
+    });
+  }
+  if(holeNumber == 2){
+    $('.hammer').animate({
+      left: '350px',
+      bottom: '270px',
+    });
+    $('.hammer').animate({
+      bottom: '-25px',
+      left: '400px',
+    });
+  }
+  if(holeNumber == 1){
+    $('.hammer').animate({
+      left: '150px',
+      bottom: '270px'
+    });
+    $('.hammer').animate({
+      bottom: '-25px',
+      left: '400px',
+    });
+  }
+  // $('.hammer').addClass(`hammer-${holeNumber}`);
+  // $(`.hammer-${holeNumber}`).removeClass('.hammer');
   for(var count = 0; count < chosenHoles.length; count++){
     //console.log(holeNumber)
     //console.log(chosenHoles[count])
