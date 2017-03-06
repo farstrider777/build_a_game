@@ -13,7 +13,7 @@ const assert = chai.assert;
 import { Board } from '../src/js/models/board';
 import { Bug } from '../src/js/models/bug';
 import { Scoreboard } from '../src/js/models/scoreboard';
-import { Hammer } from '../src/js/models/hammer';
+//import { Hammer } from '../src/js/models/hammer';
 
 // describe our game
   // describe a bug
@@ -94,38 +94,38 @@ describe('Test our game', function () {
 
     it('a Scoreboard should have a writeInstructions method that returns a string with the bosses instructions', function() {
       var fun = new Scoreboard(1, 3);
-      assert.equal(`The boss says: You've got 30 seconds to fix ${3} bugs that are in this project`, fun.writeInstructions());
+      assert.equal(`The boss says: You've got 24 seconds to fix ${3} bugs that are in this project`, fun.writeInstructions());
     });
 
     it('a Scoreboards writeInstructions method should write the number of seconds left based on the level', function() {
       var fun = new Scoreboard(1, 3);
-      assert.equal(`The boss says: You've got 30 seconds to fix ${3} bugs that are in this project`, fun.writeInstructions());
+      assert.equal(`The boss says: You've got 24 seconds to fix ${3} bugs that are in this project`, fun.writeInstructions());
       var fun = new Scoreboard(2, 4);
-      assert.equal(`The boss says: You've got 15 seconds to fix ${4} bugs that are in this project`, fun.writeInstructions());
+      assert.equal(`The boss says: You've got 21 seconds to fix ${4} bugs that are in this project`, fun.writeInstructions());
       var fun = new Scoreboard(3, 5);
-      assert.equal(`The boss says: You've got 10 seconds to fix ${5} bugs that are in this project`, fun.writeInstructions());
+      assert.equal(`The boss says: You've got 18 seconds to fix ${5} bugs that are in this project`, fun.writeInstructions());
       var fun = new Scoreboard(4, 6);
-      assert.equal(`The boss says: You've got 7.5 seconds to fix ${6} bugs that are in this project`, fun.writeInstructions());
+      assert.equal(`The boss says: You've got 15 seconds to fix ${6} bugs that are in this project`, fun.writeInstructions());
     });
 
 
   });
 
 
-  describe('Testing the Creation of a Hammer', function () {
-    it('a Hammer should exist after we create it', function () {
-      let x = new Hammer;
-      expect(x).to.be.an.instanceof(Hammer);
-    });
-
-    it('a Hammer should have a squash method that adds a dead property to a bug that it squashes', function() {
-      var bam = new Hammer;
-      var bill = new Bug;
-      bam.squash(bill);
-      assert.equal(bill.dead, true);
-    });
-
-  });
+  // describe('Testing the Creation of a Hammer', function () {
+  //   it('a Hammer should exist after we create it', function () {
+  //     let x = new Hammer;
+  //     expect(x).to.be.an.instanceof(Hammer);
+  //   });
+  //
+  //   it('a Hammer should have a squash method that adds a dead property to a bug that it squashes', function() {
+  //     var bam = new Hammer;
+  //     var bill = new Bug;
+  //     bam.squash(bill);
+  //     assert.equal(bill.dead, true);
+  //   });
+  //
+  // });
 });
   // describe('Testing the Creation of Something', function () {
   //
