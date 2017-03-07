@@ -4,10 +4,8 @@ class Scoreboard{
     this.bugsToSquash = bugsToSquash;
   }
   writeInstructions(){
-    var secondsLeft = 27 - this.level * 3;
-    return `Level ${this.level}<br> 
-    The boss says: You've got ${secondsLeft} seconds to fix ${this.bugsToSquash} bugs that are in this project
-    `;
+    var secondsLeft = 36 - this.level * 3;
+    return `Level ${this.level}<br>The boss says: You've got ${secondsLeft} seconds to fix ${this.bugsToSquash} bugs that are in this project`;
   }
 }
 

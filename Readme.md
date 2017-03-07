@@ -8,7 +8,7 @@ Skills practiced
   * Maintained an organized game flow using a consistent set interval.
 
 2. Test Driven Development
-  * Wrote more than 12 tests during my Model development phase.
+  * Wrote 11 tests during my Model development phase.
   * Followed the practice of writing the tests first, both focusing my work and making sure it was free of errors.
 
 

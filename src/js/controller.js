@@ -58,7 +58,7 @@ function popBug () {
     }
   }
 
-  if(numberOfCycles > 9 - prime.level){
+  if(numberOfCycles > 12 - prime.level){
     clearInterval(endValue);
     youLose();
   }
@@ -92,7 +92,7 @@ function killBug(event){
   if(holeNumber == 8){
     $('.hammer').animate({
       left: '150px',
-      bottom: '50px'
+      bottom: '50px',
     });
     $('.hammer').animate({
       bottom: '-25px',
