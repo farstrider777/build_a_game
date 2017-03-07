@@ -67,9 +67,12 @@ function popBug () {
 var endValue = setInterval(popBug, 3000);
 
 function killBug(event){
+  $('.sound_effect').html('<audio autoplay>   <source src="images/gavel.mp3" type="audio/mpeg"> </audio>');
   var res = event.target.attributes['0'].textContent;
   var holeNumber = res.split('-')[1];
   if(holeNumber == 10){
+    $('.sound_effect').html('<audio autoplay>   <source src="images/explode_bug.mp3" type="audio/mpeg"> </audio>');
+    $('.container').append(`<img class='explosion' src='images/explosion.gif'/>`)
     $('.hammer').animate({
       left: '550px',
       bottom: '50px'
@@ -80,6 +83,7 @@ function killBug(event){
     });
   }
   if(holeNumber == 9){
+    $('.sound_effect').html('<audio autoplay>   <source src="images/explode_bug.mp3" type="audio/mpeg"> </audio>');
     $('.hammer').animate({
       left: '350px',
       bottom: '50px',
@@ -90,6 +94,7 @@ function killBug(event){
     });
   }
   if(holeNumber == 8){
+    $('.sound_effect').html('<audio autoplay>   <source src="images/explode_bug.mp3" type="audio/mpeg"> </audio>');
     $('.hammer').animate({
       left: '150px',
       bottom: '50px',
@@ -101,6 +106,8 @@ function killBug(event){
   }
 
   if(holeNumber == 7){
+    $('.sound_effect').html('<audio autoplay>   <source src="images/explode_bug.mp3" type="audio/mpeg"> </audio>');
+
     $('.hammer').animate({
       left: '550px',
       bottom: '165px'
@@ -111,6 +118,7 @@ function killBug(event){
     });
   }
   if(holeNumber == 6){
+    $('.sound_effect').html('<audio autoplay>   <source src="images/explode_bug.mp3" type="audio/mpeg"> </audio>');
     $('.hammer').animate({
       left: '400px',
       bottom: '165px',
@@ -121,6 +129,7 @@ function killBug(event){
     });
   }
   if(holeNumber == 5){
+    $('.sound_effect').html('<audio autoplay>   <source src="images/explode_bug.mp3" type="audio/mpeg"> </audio>');
     $('.hammer').animate({
       left: '250px',
       bottom: '165px'
@@ -131,6 +140,7 @@ function killBug(event){
     });
   }
   if(holeNumber == 4){
+    $('.sound_effect').html('<audio autoplay>   <source src="images/explode_bug.mp3" type="audio/mpeg"> </audio>');
     $('.hammer').animate({
       left: '100px',
       bottom: '165px'
@@ -142,6 +152,7 @@ function killBug(event){
   }
 
   if(holeNumber == 3){
+    $('.sound_effect').html('<audio autoplay>   <source src="images/explode_bug.mp3" type="audio/mpeg"> </audio>');
     $('.hammer').animate({
       left: '550px',
       bottom: '270px'
@@ -152,6 +163,7 @@ function killBug(event){
     });
   }
   if(holeNumber == 2){
+    $('.sound_effect').html('<audio autoplay>   <source src="images/explode_bug.mp3" type="audio/mpeg"> </audio>');
     $('.hammer').animate({
       left: '350px',
       bottom: '270px',
@@ -162,6 +174,7 @@ function killBug(event){
     });
   }
   if(holeNumber == 1){
+    $('.sound_effect').html('<audio autoplay>   <source src="images/explode_bug.mp3" type="audio/mpeg"> </audio>');
     $('.hammer').animate({
       left: '150px',
       bottom: '270px'

@@ -34,7 +34,7 @@ function youLose(){
   $('.container').html(`
     <div class='title'>You Lost Whack-a-Bug!!!</div>
     <img id ='boss' src='./images/boss3.png'/>
-    <div class='instructions'><br><br><br>You didn't make it, looks like we're gonna have let you go!!!.</div>
+    <div class='instructions'><br><br><br>You didn't make it, looks like we're gonna to have let you go!!!.</div>
     `);
 }
 
