@@ -184,10 +184,76 @@
   border-top-right-radius: 7px;
 }
 
-.explosion {
+.mega-container {
+  position: relative;
+}
+
+.explosion-10 {
   position: absolute;
   bottom: 123px;
-  left: 580px;
+  left: 568px;
   width: 100px;
+}
 
+.explosion-9 {
+  position: absolute;
+  bottom: 123px;
+  left: 351px;
+  width: 100px;
+}
+
+.explosion-8 {
+  position: absolute;
+  bottom: 123px;
+  left: 138px;
+  width: 100px;
+}
+
+.explosion-7 {
+  position: absolute;
+  bottom: 236px;
+  left: 594px;
+  width: 100px;
+}
+
+.explosion-6 {
+  position: absolute;
+  bottom: 236px;
+  left: 424px;
+  width: 100px;
+}
+
+.explosion-5 {
+  position: absolute;
+  bottom: 236px;
+  left: 253px;
+  width: 100px;
+}
+
+.explosion-4 {
+  position: absolute;
+  bottom: 236px;
+  left: 100px;
+  width: 100px;
+}
+
+.explosion-3 {
+  position: absolute;
+  bottom: 312px;
+  left: 562px;
+  width: 100px;
+}
+
+.explosion-2 {
+  position: absolute;
+  bottom: 312px;
+  left: 351px;
+  width: 100px;
+}
+
+.explosion-1 {
+  position: absolute;
+  bottom: 312px;
+  left: 138px;
+  width: 100px;
 }
