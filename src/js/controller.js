@@ -10,7 +10,7 @@ var prime = new Scoreboard(startLevel, startBugs);
 writeTest(prime);
 var currentBugs = [];
 for (var i = 0; i < startBugs; i++) {
-  currentBugs.push(main.generateBug(1));
+  currentBugs.push(main.generateBug(i));
 }
 
 var numberOfCycles = -1;
@@ -50,7 +50,7 @@ function popBug () {
       prime.bugsToSquash = startBugs;
       writeTest(prime);
       for (var i = 0; i < startBugs; i++) {
-        currentBugs.push(main.generateBug(1));
+        currentBugs.push(main.generateBug(i));
       }
     }else{
       clearInterval(endValue);
