@@ -3,24 +3,44 @@ import { Scoreboard } from './models/scoreboard.js';
 import { writeTest, youWin, youLose} from './view/template.js';
 import $ from 'jquery';
 
+// Game object
+// * board
+// * scoreboard (imo, just holds bugs left and timer, level count)
+// .startScreen()
+// .playScreen()
+
+// this.level = level;
+// this.bugsToSquash = bugsToSquash;
+
 var main = new Board;
-var startLevel = 1;
+//var startLevel = 1;
 var startBugs = 5;
-var prime = new Scoreboard(startLevel, startBugs);
+var prime = new Scoreboard(1, startBugs);
 writeTest(prime);
 var currentBugs = [];
 for (var i = 0; i < startBugs; i++) {
   currentBugs.push(main.generateBug(i));
 }
-
+//  numb cyles turn count part of board
 var numberOfCycles = -1;
 
-var chosenHoles = [];
+var chosenHoles = []; // also part of board
 
 function popBug () {
 
   numberOfCycles++;
   chosenHoles = [];
+
+  /*
+  // a method on your board called board.showBugs()
+  if boards have a holeCount you could...
+  var shuffledHoles = _.range(1,this.holeCount).shuffle()
+  this.bugs.forEach(function (bug) {
+    bug.holeId = shuffledHoles.shift();
+    bug.taunt();
+  });
+
+  */
 
   for(var count = 0; count < currentBugs.length; count++){
     var holeChoice = 1 + Math.floor((Math.random() * 10));
@@ -34,6 +54,7 @@ function popBug () {
     chosenHoles.push(holeChoice);
   }
 
+  // this should also be part of bug.taunt()
   setTimeout(function(){
     for(var i = 0; i < chosenHoles.length; i++){
       $(`#hole-${chosenHoles[i]}`).toggleClass('height0');
@@ -42,11 +63,11 @@ function popBug () {
   }, 1000);
 
   if(currentBugs.length === 0){
-    startLevel++;
+    prime.level++;
     startBugs++;
     numberOfCycles = 0;
     if(startBugs <= 10){
-      prime.level = startLevel;
+      //prime.level = startLevel;
       prime.bugsToSquash = startBugs;
       writeTest(prime);
       for (var i = 0; i < startBugs; i++) {
@@ -64,8 +85,18 @@ function popBug () {
   }
 }
 
+// passing a method game.popBug, bind, closure, etc.
+// setInterval isn't doing popBug, this is really game.turn
+// game.turn does board.showBugs followed by game.checkWinner
+// game.checkWinner looks at bugs.length and clears interval if needed
 var endValue = setInterval(popBug, 3000);
+// game.intervalId = endValue;
 
+//hmmmm make into loop with varibles board.killbug()
+// better idea!!! make a die method on bug
+// bug.dead defaults to false, when the event fires
+// find the bug in game.bugs with matching holdId
+// then say bug.die(), which runs the template
 function killBug(event){
   $('.sound_effect').html('<audio autoplay>   <source src="images/gavel.mp3" type="audio/mpeg"> </audio>');
   var res = event.target.attributes['0'].textContent;
@@ -75,12 +106,12 @@ function killBug(event){
     $('.exp-container').html(`<img class='explosion-10' src='images/explosion.gif'/>`);
     setTimeout(function(){ $('.exp-container').html(''); }, 700);
     $('.hammer').animate({
-      left: '550px',
-      bottom: '50px'
+      left: '550px', /// 55 * 10
+      bottom: '50px' // 5 * 10
     });
     $('.hammer').animate({
-      bottom: '-25px',
-      left: '400px',
+      bottom: '-25px', // -2.5 * 10
+      left: '400px',  // -40 * 10
     });
   }
   if(holeNumber == 9){
@@ -209,6 +240,7 @@ function killBug(event){
   }
 }
 
+// game.board.killBug and tricks for closure/bind so you don't lose this
 $('.container').click(killBug);
 
 

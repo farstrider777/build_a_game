@@ -2,7 +2,9 @@ import { Bug } from './bug';
 
 class Board{
   // constructor(){
+  //  // this.bugs = []; board.generate level fill it up with bugs
   // }
+
   generateBug(bugId){
     var colorNumber = Math.random();
     var bugColor;
