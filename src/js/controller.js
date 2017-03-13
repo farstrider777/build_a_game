@@ -22,13 +22,14 @@ for (var i = 0; i < prime.bugsToSquash; i++) {
   currentBugs.push(main.generateBug(i));
 }
 //  numb cyles turn count part of board
-var numberOfCycles = -1;
+
+main.numberOfCycles = -1;
 
 var chosenHoles = []; // also part of board
 
 function popBug () {
 
-  numberOfCycles++;
+  main.numberOfCycles++;
   chosenHoles = [];
 
   /*
@@ -65,7 +66,7 @@ function popBug () {
   if(currentBugs.length === 0){
     prime.level++;
     prime.bugsToSquash++;
-    numberOfCycles = 0;
+    main.numberOfCycles = 0;
     if(prime.bugsToSquash <= 10){
       //prime.level = startLevel;
       //prime.bugsToSquash = startBugs;
@@ -79,7 +80,7 @@ function popBug () {
     }
   }
 
-  if(numberOfCycles > 12 - prime.level){
+  if(main.numberOfCycles > 12 - prime.level){
     clearInterval(endValue);
     youLose();
   }
