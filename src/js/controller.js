@@ -14,11 +14,11 @@ import $ from 'jquery';
 
 var main = new Board;
 //var startLevel = 1;
-var startBugs = 5;
-var prime = new Scoreboard(1, startBugs);
+//var startBugs = 5;
+var prime = new Scoreboard(1, 5);
 writeTest(prime);
 var currentBugs = [];
-for (var i = 0; i < startBugs; i++) {
+for (var i = 0; i < prime.bugsToSquash; i++) {
   currentBugs.push(main.generateBug(i));
 }
 //  numb cyles turn count part of board
@@ -64,13 +64,13 @@ function popBug () {
 
   if(currentBugs.length === 0){
     prime.level++;
-    startBugs++;
+    prime.bugsToSquash++;
     numberOfCycles = 0;
-    if(startBugs <= 10){
+    if(prime.bugsToSquash <= 10){
       //prime.level = startLevel;
-      prime.bugsToSquash = startBugs;
+      //prime.bugsToSquash = startBugs;
       writeTest(prime);
-      for (var i = 0; i < startBugs; i++) {
+      for (var i = 0; i < prime.bugsToSquash; i++) {
         currentBugs.push(main.generateBug(i));
       }
     }else{
