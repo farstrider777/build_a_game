@@ -25,12 +25,12 @@ for (var i = 0; i < prime.bugsToSquash; i++) {
 
 main.numberOfCycles = -1;
 
-var chosenHoles = []; // also part of board
+main.chosenHoles = []; // also part of board
 
 function popBug () {
 
   main.numberOfCycles++;
-  chosenHoles = [];
+  main.chosenHoles = [];
 
   /*
   // a method on your board called board.showBugs()
@@ -45,21 +45,21 @@ function popBug () {
 
   for(var count = 0; count < currentBugs.length; count++){
     var holeChoice = 1 + Math.floor((Math.random() * 10));
-    while(chosenHoles.includes(holeChoice)){
+    while(main.chosenHoles.includes(holeChoice)){
       holeChoice = 1 + Math.floor((Math.random() * 10));
     }
     $(`#hole-${holeChoice}`).html(currentBugs[count].name);
     $(`#hole-${holeChoice}`).toggleClass('height0');
     $(`#hole-${holeChoice}`).toggleClass('height60');
     //$(`#hole-${holeChoice}`).addClass(`${currentBugs[count].color}`);
-    chosenHoles.push(holeChoice);
+    main.chosenHoles.push(holeChoice);
   }
 
   // this should also be part of bug.taunt()
   setTimeout(function(){
-    for(var i = 0; i < chosenHoles.length; i++){
-      $(`#hole-${chosenHoles[i]}`).toggleClass('height0');
-      $(`#hole-${chosenHoles[i]}`).toggleClass('height60');
+    for(var i = 0; i < main.chosenHoles.length; i++){
+      $(`#hole-${main.chosenHoles[i]}`).toggleClass('height0');
+      $(`#hole-${main.chosenHoles[i]}`).toggleClass('height60');
     }
   }, 1000);
 
@@ -234,8 +234,8 @@ function killBug(event){
       left: '400px',
     });
   }
-  for(var count = 0; count < chosenHoles.length; count++){
-    if(holeNumber == chosenHoles[count]){
+  for(var count = 0; count < main.chosenHoles.length; count++){
+    if(holeNumber == main.chosenHoles[count]){
       currentBugs.splice(count, 1);
     }
   }
