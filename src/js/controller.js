@@ -15,30 +15,33 @@ import { popBug } from './models/popBug.js';
 // this.level = level;
 // this.bugsToSquash = bugsToSquash;
 
-var test = new Scoreboard(1, 5);
-var test2 = new Board;
+// var test = new Scoreboard(1, 5);
+// var test2 = new Board;
+//
 
-var forPass = { scoreboard: test,
-  board: test2};
 
-var testGame = new Game(forPass);
 
-console.log(testGame);
 
 var main = new Board;
-//var startLevel = 1;
-//var startBugs = 5;
 var prime = new Scoreboard(1, 5);
-writeTest(prime);
+
+var forPass = { scoreboard: prime,
+  board: main};
+
+var thisGame = new Game(forPass);
+
+console.log(thisGame);
+
+writeTest(thisGame.scoreboard);
 var currentBugs = [];
-for (var i = 0; i < prime.bugsToSquash; i++) {
-  currentBugs.push(main.generateBug(i));
+for (var i = 0; i < thisGame.scoreboard.bugsToSquash; i++) {
+  currentBugs.push(thisGame.board.generateBug(i));
 }
 //  numb cyles turn count part of board
 
-main.numberOfCycles = -1;
+thisGame.board.numberOfCycles = -1;
 
-main.chosenHoles = []; // also part of board
+thisGame.board.chosenHoles = []; // also part of board
 
 
 
@@ -58,7 +61,7 @@ var endValue = setInterval(popBug, 3000);
 
 
 // game.board.killBug and tricks for closure/bind so you don't lose this
-$('.container').click(main.killBug2);
+$('.container').click(thisGame.board.killBug2);
 
 
-export { prime, currentBugs, main, endValue};
+export { currentBugs, endValue, thisGame};

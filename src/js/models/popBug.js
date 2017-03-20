@@ -1,12 +1,12 @@
 import { writeTest, youWin, youLose} from '../view/template.js';
-import { main, currentBugs, prime, endValue } from '../controller.js';
+import { thisGame, currentBugs, endValue } from '../controller.js';
 import $ from 'jquery';
 
 
 function popBug () {
 
-  main.numberOfCycles++;
-  main.chosenHoles = [];
+  thisGame.board.numberOfCycles++;
+  thisGame.board.chosenHoles = [];
 
   /*
   // a method on your board called board.showBugs()
@@ -21,34 +21,32 @@ function popBug () {
 
   for(var count = 0; count < currentBugs.length; count++){
     var holeChoice = 1 + Math.floor((Math.random() * 10));
-    while(main.chosenHoles.includes(holeChoice)){
+    while(thisGame.board.chosenHoles.includes(holeChoice)){
       holeChoice = 1 + Math.floor((Math.random() * 10));
     }
     $(`#hole-${holeChoice}`).html(currentBugs[count].name);
     $(`#hole-${holeChoice}`).toggleClass('height0');
     $(`#hole-${holeChoice}`).toggleClass('height60');
     //$(`#hole-${holeChoice}`).addClass(`${currentBugs[count].color}`);
-    main.chosenHoles.push(holeChoice);
+    thisGame.board.chosenHoles.push(holeChoice);
   }
 
   // this should also be part of bug.taunt()
   setTimeout(function(){
-    for(var i = 0; i < main.chosenHoles.length; i++){
-      $(`#hole-${main.chosenHoles[i]}`).toggleClass('height0');
-      $(`#hole-${main.chosenHoles[i]}`).toggleClass('height60');
+    for(var i = 0; i < thisGame.board.chosenHoles.length; i++){
+      $(`#hole-${thisGame.board.chosenHoles[i]}`).toggleClass('height0');
+      $(`#hole-${thisGame.board.chosenHoles[i]}`).toggleClass('height60');
     }
   }, 1000);
 
   if(currentBugs.length === 0){
-    prime.level++;
-    prime.bugsToSquash++;
-    main.numberOfCycles = 0;
-    if(prime.bugsToSquash <= 10){
-      //prime.level = startLevel;
-      //prime.bugsToSquash = startBugs;
-      writeTest(prime);
-      for (var i = 0; i < prime.bugsToSquash; i++) {
-        currentBugs.push(main.generateBug(i));
+    thisGame.scoreboard.level++;
+    thisGame.scoreboard.bugsToSquash++;
+    thisGame.board.numberOfCycles = 0;
+    if(thisGame.scoreboard.bugsToSquash <= 10){
+      writeTest(thisGame.scoreboard);
+      for (var i = 0; i < thisGame.scoreboard.bugsToSquash; i++) {
+        currentBugs.push(thisGame.board.generateBug(i));
       }
     }else{
       clearInterval(endValue);
@@ -56,7 +54,7 @@ function popBug () {
     }
   }
 
-  if(main.numberOfCycles > 12 - prime.level){
+  if(thisGame.board.numberOfCycles > 12 - thisGame.scoreboard.level){
     clearInterval(endValue);
     youLose();
   }
@@ -64,4 +62,4 @@ function popBug () {
 
 //var endValue = setInterval(popBug, 3000);
 
-export { popBug }
+export { popBug };
