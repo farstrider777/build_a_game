@@ -1,8 +1,13 @@
+import { Board } from './board.js';
+import { Scoreboard } from './scoreboard.js';
+
 class Game{
-  constructor(object){
-    object = object || {};
-    this.board = object.board;
-    this.scoreboard = object.scoreboard;
+  constructor(){
+    //object = object || {};
+    this.board = new Board;
+    this.scoreboard = new Scoreboard(1, 5);
+    // this.board = object.board;
+    // this.scoreboard = object.scoreboard;
   }
 
   startScreen(){

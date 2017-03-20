@@ -60,6 +60,5 @@ function popBug () {
   }
 }
 
-//var endValue = setInterval(popBug, 3000);
 
 export { popBug };
