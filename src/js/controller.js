@@ -1,7 +1,6 @@
 import { Board } from './models/board.js';
 import { Scoreboard } from './models/scoreboard.js';
 import { writeTest, youWin, youLose} from './view/template.js';
-import { Game } from './models/game.js';
 import $ from 'jquery';
 
 // Game object
@@ -99,10 +98,6 @@ var endValue = setInterval(popBug, 3000);
 // bug.dead defaults to false, when the event fires
 // find the bug in game.bugs with matching holdId
 // then say bug.die(), which runs the template
-
-
-/*
-
 function killBug(event){
   $('.sound_effect').html('<audio autoplay>   <source src="images/gavel.mp3" type="audio/mpeg"> </audio>');
   var res = event.target.attributes['0'].textContent;
@@ -246,12 +241,8 @@ function killBug(event){
   }
 }
 
-*/
-
-
 // game.board.killBug and tricks for closure/bind so you don't lose this
-var fun = new Game;
-$('.container').click(fun.killBug);
+$('.container').click(killBug);
 
 
 export { prime, currentBugs };
