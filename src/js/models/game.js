@@ -1,9 +1,8 @@
 class Game{
   constructor(object){
-    // object = object || {};
-    // this.name = object.name;
-    // this.color = object.color;
-    // this.id = object.id;
+    object = object || {};
+    this.board = object.board;
+    this.scoreboard = object.scoreboard;
   }
 
   startScreen(){
@@ -11,7 +10,7 @@ class Game{
   }
 
   playScreen(){
-    
+
   }
 
 

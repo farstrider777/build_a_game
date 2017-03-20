@@ -1,3 +1,4 @@
+import { Game } from './models/game.js';
 import { Board } from './models/board.js';
 import { Scoreboard } from './models/scoreboard.js';
 import { writeTest} from './view/template.js';
@@ -13,6 +14,16 @@ import { popBug } from './models/popBug.js';
 
 // this.level = level;
 // this.bugsToSquash = bugsToSquash;
+
+var test = new Scoreboard(1, 5);
+var test2 = new Board;
+
+var forPass = { scoreboard: test,
+  board: test2};
+
+var testGame = new Game(forPass);
+
+console.log(testGame);
 
 var main = new Board;
 //var startLevel = 1;
