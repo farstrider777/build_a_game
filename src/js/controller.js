@@ -1,6 +1,4 @@
 import { Game } from './models/game.js';
-import { Board } from './models/board.js';
-import { Scoreboard } from './models/scoreboard.js';
 import { writeTest} from './view/template.js';
 import $ from 'jquery';
 import { popBug } from './models/popBug.js';
@@ -11,11 +9,11 @@ import { popBug } from './models/popBug.js';
 var thisGame = new Game();
 
 writeTest(thisGame.scoreboard);
-var currentBugs = [];
+
+thisGame.board.currentBugs = [];
 for (var i = 0; i < thisGame.scoreboard.bugsToSquash; i++) {
-  currentBugs.push(thisGame.board.generateBug(i));
+  thisGame.board.currentBugs.push(thisGame.board.generateBug(i));
 }
-//  numb cyles turn count part of board
 
 thisGame.board.numberOfCycles = -1;
 
@@ -25,5 +23,4 @@ var endValue = setInterval(popBug, 3000);
 
 $('.container').click(thisGame.board.killBug2);
 
-
-export { currentBugs, endValue, thisGame};
+export { endValue, thisGame};

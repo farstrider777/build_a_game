@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { thisGame, currentBugs } from '../controller.js';
+import { thisGame } from '../controller.js';
 
 
 
@@ -141,7 +141,7 @@ function killBug(event){
   }
   for(var count = 0; count < thisGame.board.chosenHoles.length; count++){
     if(holeNumber == thisGame.board.chosenHoles[count]){
-      currentBugs.splice(count, 1);
+      thisGame.board.currentBugs.splice(count, 1);
     }
   }
 }

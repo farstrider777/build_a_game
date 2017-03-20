@@ -1,5 +1,5 @@
 import { writeTest, youWin, youLose} from '../view/template.js';
-import { thisGame, currentBugs, endValue } from '../controller.js';
+import { thisGame, endValue } from '../controller.js';
 import $ from 'jquery';
 
 
@@ -19,12 +19,12 @@ function popBug () {
 
   */
 
-  for(var count = 0; count < currentBugs.length; count++){
+  for(var count = 0; count < thisGame.board.currentBugs.length; count++){
     var holeChoice = 1 + Math.floor((Math.random() * 10));
     while(thisGame.board.chosenHoles.includes(holeChoice)){
       holeChoice = 1 + Math.floor((Math.random() * 10));
     }
-    $(`#hole-${holeChoice}`).html(currentBugs[count].name);
+    $(`#hole-${holeChoice}`).html(thisGame.board.currentBugs[count].name);
     $(`#hole-${holeChoice}`).toggleClass('height0');
     $(`#hole-${holeChoice}`).toggleClass('height60');
     //$(`#hole-${holeChoice}`).addClass(`${currentBugs[count].color}`);
@@ -39,14 +39,14 @@ function popBug () {
     }
   }, 1000);
 
-  if(currentBugs.length === 0){
+  if(thisGame.board.currentBugs.length === 0){
     thisGame.scoreboard.level++;
     thisGame.scoreboard.bugsToSquash++;
     thisGame.board.numberOfCycles = 0;
     if(thisGame.scoreboard.bugsToSquash <= 10){
       writeTest(thisGame.scoreboard);
       for (var i = 0; i < thisGame.scoreboard.bugsToSquash; i++) {
-        currentBugs.push(thisGame.board.generateBug(i));
+        thisGame.board.currentBugs.push(thisGame.board.generateBug(i));
       }
     }else{
       clearInterval(endValue);

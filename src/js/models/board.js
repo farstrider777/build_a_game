@@ -2,7 +2,7 @@ import { Bug } from './bug';
 import { killBug } from './ktest';
 
 class Board{
-  constructor(){
+  constructor(array){
    // this.bugs = []; board.generate level fill it up with bugs
   }
 
