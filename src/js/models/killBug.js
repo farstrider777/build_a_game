@@ -1,8 +1,6 @@
 import $ from 'jquery';
 import { thisGame } from '../controller.js';
 
-
-
 function killBug(event){
   $('.sound_effect').html('<audio autoplay>   <source src="images/gavel.mp3" type="audio/mpeg"> </audio>');
   var res = event.target.attributes['0'].textContent;
@@ -12,12 +10,12 @@ function killBug(event){
     $('.exp-container').html(`<img class='explosion-10' src='images/explosion.gif'/>`);
     setTimeout(function(){ $('.exp-container').html(''); }, 700);
     $('.hammer').animate({
-      left: '550px', /// 55 * 10
-      bottom: '50px' // 5 * 10
+      left: '550px',
+      bottom: '50px'
     });
     $('.hammer').animate({
-      bottom: '-25px', // -2.5 * 10
-      left: '400px',  // -40 * 10
+      bottom: '-25px',
+      left: '400px',  
     });
   }
   if(holeNumber == 9){

@@ -2,22 +2,10 @@ import { writeTest, youWin, youLose} from '../view/template.js';
 import { thisGame, endValue } from '../controller.js';
 import $ from 'jquery';
 
-
 function popBug () {
 
   thisGame.board.numberOfCycles++;
   thisGame.board.chosenHoles = [];
-
-  /*
-  // a method on your board called board.showBugs()
-  if boards have a holeCount you could...
-  var shuffledHoles = _.range(1,this.holeCount).shuffle()
-  this.bugs.forEach(function (bug) {
-    bug.holeId = shuffledHoles.shift();
-    bug.taunt();
-  });
-
-  */
 
   for(var count = 0; count < thisGame.board.currentBugs.length; count++){
     var holeChoice = 1 + Math.floor((Math.random() * 10));

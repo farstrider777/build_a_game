@@ -1,6 +1,4 @@
 import $ from 'jquery';
-import { Scoreboard } from '../models/scoreboard';
-//import { prime } from '../controller';
 
 function writeTest(object){
   $('.container').html(`

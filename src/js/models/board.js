@@ -1,10 +1,7 @@
 import { Bug } from './bug';
-import { killBug } from './ktest';
+import { killBug } from './killBug';
 
 class Board{
-  constructor(array){
-   // this.bugs = []; board.generate level fill it up with bugs
-  }
 
   killBug2(event){
     killBug(event);
@@ -52,6 +49,5 @@ class Board{
     return fred;
   }
 }
-
 
 export { Board };

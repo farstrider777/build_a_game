@@ -1,10 +1,6 @@
 import { Game } from './models/game.js';
 import { writeTest} from './view/template.js';
 import $ from 'jquery';
-import { popBug } from './models/popBug.js';
-
-// .startScreen()
-// .playScreen()
 
 var thisGame = new Game();
 
@@ -19,7 +15,7 @@ thisGame.board.numberOfCycles = -1;
 
 thisGame.board.chosenHoles = [];
 
-var endValue = setInterval(popBug, 3000);
+var endValue = setInterval(thisGame.popBug2, 3000);
 
 $('.container').click(thisGame.board.killBug2);
 
