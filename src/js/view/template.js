@@ -4,7 +4,10 @@ function writeTest(object){
   $('.container').html(`
     <div class='title'>Welcome to Whack-a-Bug!!!</div>
     <img id ='boss' src='./images/boss1.png'/>
-    <div class='instructions'><br><br>${object.writeInstructions()}</div>
+    <div class='instructions'><br><br>${object.writeInstructions()}
+    <div class='seconds-left'>Get Ready!!!</div>
+    </div>
+
     <div><img id='board' src='./images/mole_background.jpeg'/></div>
     <div id='hole-1' class='height0'></div>
     <div id='hole-2' class='height0'></div>

@@ -1,11 +1,15 @@
 import { writeTest, youWin, youLose} from '../view/template.js';
-import { thisGame, endValue } from '../controller.js';
+import { thisGame, endValue} from '../controller.js';
 import $ from 'jquery';
 
 function popBug () {
 
   thisGame.board.numberOfCycles++;
   thisGame.board.chosenHoles = [];
+
+  if(!thisGame.scoreboard.countEnd){
+    thisGame.scoreboard.countEnd = thisGame.scoreboard.writeCountdown(36 - thisGame.scoreboard.level * 3);
+  }
 
   for(var count = 0; count < thisGame.board.currentBugs.length; count++){
     var holeChoice = 1 + Math.floor((Math.random() * 10));
@@ -15,11 +19,9 @@ function popBug () {
     $(`#hole-${holeChoice}`).html(thisGame.board.currentBugs[count].name);
     $(`#hole-${holeChoice}`).toggleClass('height0');
     $(`#hole-${holeChoice}`).toggleClass('height60');
-    //$(`#hole-${holeChoice}`).addClass(`${currentBugs[count].color}`);
     thisGame.board.chosenHoles.push(holeChoice);
   }
 
-  // this should also be part of bug.taunt()
   setTimeout(function(){
     for(var i = 0; i < thisGame.board.chosenHoles.length; i++){
       $(`#hole-${thisGame.board.chosenHoles[i]}`).toggleClass('height0');
@@ -28,6 +30,9 @@ function popBug () {
   }, 1000);
 
   if(thisGame.board.currentBugs.length === 0){
+    clearInterval(thisGame.scoreboard.countEnd);
+    thisGame.scoreboard.countEnd = thisGame.scoreboard.writeCountdown(33 - thisGame.scoreboard.level * 3);
+
     thisGame.scoreboard.level++;
     thisGame.scoreboard.bugsToSquash++;
     thisGame.board.numberOfCycles = 0;
