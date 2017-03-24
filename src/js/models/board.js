@@ -3,6 +3,9 @@ import { killBug } from './killBug';
 
 class Board{
 
+  constructor(){
+  }
+
   killBug2(event){
     killBug(event);
   }

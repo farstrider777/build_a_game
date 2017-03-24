@@ -4,7 +4,7 @@ import { popBug } from './popBug.js';
 
 class Game{
   constructor(){
-    this.board = new Board;
+    this.board = new Board();
     this.scoreboard = new Scoreboard(1, 5);
   }
 

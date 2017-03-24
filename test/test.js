@@ -60,9 +60,11 @@ describe('Test our game', function () {
     });
   });
 
+
+
   describe('Testing the Creation of a Board', function () {
     it('a Board should exist after we create it', function () {
-      let x = new Board;
+      let x = new Board();
       expect(x).to.be.an.instanceof(Board);
     });
 
